@@ -20,24 +20,24 @@ The project utilizes the **Credit Card Transactions Fraud Detection Dataset** fr
     * **Transaction details**: Merchant, category, and amount (`amt`).
     * **Geographical**: Latitude and longitude of both customer and merchant.
 * **Class Imbalance**: The dataset is extremely skewed, with only **0.57887%** of records labeled as fraudulent (approximately 7,506 cases in the training set).
-![dist](image-url "assets/dist.png")
+![dist](assets/dist.png)
 
 
 ## Exploratory Data Analysis (EDA)
 Key insights derived from the analysis of the dataset:
 
 * **Feature correlation**: Among numerical features, the transaction **amount (`amt`)** shows the strongest correlation with fraud, followed by the **hour of transaction** and **customer age**. However, all linear correlations remain weak ($<0.25$), suggesting that simple linear models may not suffice.
-![Corr](image-url "assets/corr.png")
+![Corr](assets/corr.png)
 * **Transaction amount**: Fraudulent transactions generally involve higher monetary values. While legitimate transactions cluster around smaller amounts, fraud is more concentrated in the **mid-to-high ranges**.
-![Amount](image-url "assets/amount.png")
+![Amount](assets/amount.png)
 * **Temporal patterns**: Fraudulent activities are far more likely to occur **at night**. This strong temporal pattern suggests attackers exploit off-peak hours when monitoring might be perceived as weaker.
-![tmp](image-url "assets/daynight.png")
+![tmp](assets/daynight.png)
 * **Demographics**: Customers born between the **1960s and 1980s** appear more frequently in fraud cases, indicating a specific demographic vulnerability.
-![dob](image-url "assets/dob.png")
+![dob](assets/dob.png)
 * **Category analysis**: High spending volumes are seen in `grocery_pos`, `shopping_net`, and `travel`. However, the highest fraud rates ($>1.4\%$) are found in `grocery_pos`, `misc_net`, and `shopping_pos`. `shopping_pos` is particularly critical as it combines high volume with the highest fraud rate (approx. 1.8%).
-![spending](image-url "assets/spending.png")
+![spending](assets/spending.png)
 * **Geographic Concentration**: Fraud rates are notably higher in states such as **New York, Pennsylvania, Texas, and California**, likely driven by population density and economic activity.
-![geo](image-url "assets/geo.png")
+![geo](assets/geo.png)
 
 ## Pipeline
 - **Preprocessing & feature engineering**  
